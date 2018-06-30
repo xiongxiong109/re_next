@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Component, Fragment } from 'react'
+import TButton from '../components/Button'
 
 class IndexPage extends Component {
     // 服务端同构数据出口
@@ -31,6 +32,7 @@ class IndexPage extends Component {
                 <div className="th__logo">
                     <img src={logoUrl} alt={logoNm}/>
                 </div>
+                <TButton>Hello I am a Button</TButton>
                 <style>{`
                     .th__logo {
                         width: 50px;

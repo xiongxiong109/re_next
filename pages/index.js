@@ -7,7 +7,7 @@ class IndexPage extends Component {
     static async getInitialProps({ req }) {
         const fetch = () => new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve('gogogo');
+                resolve('Bear com');
             }, 300);
         })
         let rst = await fetch();

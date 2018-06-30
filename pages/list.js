@@ -1,9 +1,14 @@
-import { Component } from 'react'
-
+import { Component, Fragment } from 'react'
+import Head from 'next/head'
 class ListPage extends Component {
     render() {
         return (
-            <div>list page</div>
+            <Fragment>
+                <Head>
+                    <title>Hello List</title>
+                </Head>
+                <div>list page</div>
+            </Fragment>
         )
     }
 }

@@ -1,10 +1,14 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Component, Fragment } from 'react'
 import TButton from '../components/Button'
+import './index.less';
 
 class IndexPage extends Component {
     // 服务端同构数据出口
-    static async getInitialProps({ req }) {
+    static async getInitialProps({ query, pathname, req }) {
+        console.log(pathname);
+        console.log(query);
         const fetch = () => new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve('Bear com');
@@ -33,17 +37,9 @@ class IndexPage extends Component {
                     <img src={logoUrl} alt={logoNm}/>
                 </div>
                 <TButton>Hello I am a Button</TButton>
-                <style>{`
-                    .th__logo {
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                        overflow: hidden;
-                    }
-                    .th__logo img {
-                        width: 100%;
-                    }
-                `}</style>
+                <Link href="/list">
+                    <a>go to list</a>
+                </Link>
             </Fragment>
         )
     }

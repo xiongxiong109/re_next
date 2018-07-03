@@ -1,0 +1,11 @@
+{
+    "presets": [ "next/babel" ],
+    "plugins": [
+        ["component", {
+            libraryName: 'thanos',
+            style: true,
+            libDir: 'dist',
+            camel2Dash: false
+        }, 'thanos']
+    ]
+}

@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { Component, Fragment } from 'react'
-import TButton from '../components/Button'
-import './index.less';
+import 'thanos/dist/main.css'
+import { SearchInput, SearchCity } from 'thanos'
+import './index.css'
 
 class IndexPage extends Component {
     // 服务端同构数据出口
@@ -33,10 +34,11 @@ class IndexPage extends Component {
                     <title>{title}</title>
                 </Head>
                 <div>Hello Next</div>
+                <SearchInput />
+                <SearchCity />
                 <div className="th__logo">
                     <img src={logoUrl} alt={logoNm}/>
                 </div>
-                <TButton>Hello I am a Button</TButton>
                 <Link href="/list">
                     <a>go to list</a>
                 </Link>

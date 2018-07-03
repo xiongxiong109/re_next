@@ -1,6 +1,7 @@
 import { Component, Fragment } from 'react'
-// import 'thanos/dist/main.css'
+import 'thanos/dist/main.css'
 import { SearchCity } from 'thanos'
+import Channel from 'thanos/dist/channel'
 
 import Head from 'next/head'
 class ListPage extends Component {
@@ -16,6 +17,9 @@ class ListPage extends Component {
                 </div>
             </Fragment>
         )
+    }
+    componentDidMount() {
+        console.log(Channel.get())
     }
 }
 

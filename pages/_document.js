@@ -6,7 +6,6 @@ export default class MyDocument extends Document {
         return {...initialProps}
     }
     render() {
-        this.props.__NEXT_DATA__.env = 'prd';
         return (
             <html>
                 <Head>

@@ -9,15 +9,14 @@ const appService = (port) => {
 
   const handle = app.getRequestHandler()
 
-  // 自定义路由
-
+  // 页面路由
+  server.get('/', async (req, res) => {
+    // 页面携带render数据
+    const pageHtml = await app.renderToHTML(req, res, '/')
+    res.send(pageHtml);
+  })
   // 通配路由
   server.get('*', async (req, res) => {
-
-    const pageHtml = await app.renderToHTML(req, res, '/', {
-      env: 'dev-bear'
-    })
-    console.log(pageHtml);
     return handle(req, res)
   })
 

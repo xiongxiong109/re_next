@@ -12,7 +12,12 @@ const appService = (port) => {
   // 页面路由
   server.get('/', async (req, res) => {
     // 页面携带render数据
-    const pageHtml = await app.renderToHTML(req, res, '/')
+    const { query } = req;
+    const pageHtml = await app.renderToHTML(req, res, '/', {
+      site: 'och',
+      env: 'fat',
+      ...query
+    })
     res.send(pageHtml);
   })
   // 通配路由

@@ -4,18 +4,29 @@ import { Component, Fragment } from 'react'
 import 'thanos/dist/main.css'
 import { SearchCity } from 'thanos'
 // import Channel from 'thanos/dist/channel'
+import CarBaseModel from 'thanos/dist/model'
+
 import './index.css'
 
 class IndexPage extends Component {
+    static pageid = 103335
+    static SEOModel = new CarBaseModel({
+      url: '14269/queryseopageinfo.json'
+    })
     // 服务端同构数据出口
     static async getInitialProps({ query, pathname, req }) {
-        const fetch = () => new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve('Bear com');
-            }, 300);
-        })
-        let rst = await fetch();
-        return { title: rst };
+        const { cid, stncd } = query;
+        let rst = {};
+        try {
+            rst = await IndexPage.SEOModel.fetch({
+                cid,
+                pageid: IndexPage.pageid,
+                lang: 'zh_cn'
+            })
+        } catch(err) {
+            console.log(err)
+        }
+        return { seo: rst };
     }
     constructor(props) {
         super(props);
@@ -25,12 +36,14 @@ class IndexPage extends Component {
         }
     }
     render() {
-        const { title } = this.props;
+        const { seo } = this.props;
         const { logoUrl, logoNm } = this.state;
         return (
             <Fragment>
                 <Head>
-                    <title>{title}</title>
+                    <title>{seo.title}</title>
+                    <meta name="keywords" content={seo.keywords} />
+                    <meta name="description" content={seo.description} />
                 </Head>
                 <div>Hello Next</div>
                 <SearchCity />

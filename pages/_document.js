@@ -17,7 +17,6 @@ export default class MyDocument extends Document {
                     <meta key="email-format-detection" content="email=no" name="format-detection" />
                     <link rel="stylesheet" href="//webresource.c-ctrip.com/styles/h5/common/n_main.css" />
                     <link rel="stylesheet" href="/_next/static/style.css" />
-                    <title>Hello World</title>
                 </Head>
                 <body>
                     <Main />

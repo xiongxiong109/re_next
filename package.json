@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ctrip/nfes-mvc": "^0.2.4",
     "next": "^6.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
@@ -19,6 +20,7 @@
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-less": "^0.3.0",
     "babel-plugin-component": "^1.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "express": "^4.16.3",
     "less": "^3.0.4"
   }

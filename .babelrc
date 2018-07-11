@@ -1,6 +1,7 @@
 {
     "presets": [ "next/babel" ],
     "plugins": [
+        "transform-decorators-legacy",
         ["component", {
             libraryName: 'thanos',
             style: true,

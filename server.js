@@ -14,8 +14,10 @@ const appService = (port) => {
     // 页面携带render数据
     const { query } = req;
     const pageHtml = await app.renderToHTML(req, res, '/', {
-      site: 'och',
-      env: 'fat',
+      envObj: {
+        site: 'och',
+        env: 'fat'
+      },
       ...query
     })
     res.send(pageHtml);

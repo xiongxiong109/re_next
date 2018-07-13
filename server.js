@@ -22,6 +22,18 @@ const appService = (port) => {
     })
     res.send(pageHtml);
   })
+  server.get('/list', async (req, res) => {
+    // 页面携带render数据
+    const { query } = req;
+    const pageHtml = await app.renderToHTML(req, res, '/list', {
+      envObj: {
+        site: 'och',
+        env: 'fat'
+      },
+      ...query
+    })
+    res.send(pageHtml);
+  })
   // 通配路由
   server.get('*', async (req, res) => {
     return handle(req, res)
